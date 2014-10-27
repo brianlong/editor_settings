@@ -4,6 +4,8 @@
 #
 # * Attributes:
 #   - :attribute => description
+# * Validates:
+#   - Describe attribute validations
 # * Constraints:
 #   - Describe the Constraint
 # * Raises:
