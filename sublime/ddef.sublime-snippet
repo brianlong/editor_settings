@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+# ${0:Describe This Method}
+#
+# * Options:
+#   - :option => Description
+# * Returns:
+#   - Description
+# * Raises:
+#   - Exception => Description
+# * Examples:
+#     Indent example code two spaces for best formatting after 'rake doc:app'
+]]></content>
+	<tabTrigger>ddef</tabTrigger>
+</snippet>

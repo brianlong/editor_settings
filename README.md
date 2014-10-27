@@ -1,4 +1,4 @@
-editor_settings
+Editor Settings
 ===============
 
-My text editor settings
+My text editor settings.
