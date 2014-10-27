@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-# ${0:Describe This Method}
+# ${0:Describe This Method}. Delete any lines below that are not needed.
 #
 # * Options:
 #   - :option => Description

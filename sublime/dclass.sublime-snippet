@@ -1,9 +1,13 @@
 <snippet>
 	<content><![CDATA[
-# ${0:Describe This Class}
+# ${0:Describe This Class}. Delete any lines below that are not needed.
 #
 # * Attributes:
 #   - :attribute => description
+# * Constraints:
+#   - Describe the Constraint
+# * Raises:
+#   - Exception => When the Exception is raised.
 # * Examples:
 #     Indent example code two spaces for best formatting after 'rake doc:app'
 ]]></content>
