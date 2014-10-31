@@ -19,10 +19,13 @@
     'body': 'Hello World!'
   'Describe Class':
     'prefix': 'dclass'
-    'body': "# ${0:Describe This Class}\n#\n# * Attributes:\n#   - :attribute => description\n# * Examples:\n#     Indent example code two spaces for best formatting after 'rake doc:app'"
+    'body': "# ${0:Describe This Class}\n#\n# * Attributes:\n#   - :attribute => description\n# * Validates:\n#   - Describe attribute validations\n# * Relationships:\n#   - Describe ActiveRecord relationships to other models.\n# * Constraints:\n#   - Describe the constraints in the class or database\n# * Raises:\n#   - Exception => When the Exception is raised.\n# * Examples:\n#     Indent example code two spaces for best formatting after 'rake doc:app'"
   'Describe Def':
     'prefix': 'ddef'
     'body': '# ${0:Describe This Method}\n#\n# * Options:\n#   - :option => Description\n# * Returns:\n#   - Description\n# * Raises:\n#   - Exception -> Description\n# * Examples:\n#     Example_Code'
   'Describe Module':
     'prefix': 'dmod'
     'body': "# ${0:Describe This Module}\n#\n# * Examples:\n#     Example_Code"
+  'Create a new test':
+    'prefix': 'test'
+    'body': "test \"${1:the_truth}\" do\n  assert_equal ${2:true}, ${3:true}\nend"
