@@ -31,4 +31,4 @@
     'body': "test \"${1:the_truth}\" do\n  assert_equal ${2:true}, ${3:true}\nend"
   'Begin rescue end block':
     'prefix': 'begin'
-    'body': "begin\n\t${1:# code here...}\nrescue StandardError => e\n\t${2:# rescue here}\nend # begin"
+    'body': "begin\n  ${1:# code here...}\nrescue StandardError => e\n  ${2:# rescue here}\nend # begin"
