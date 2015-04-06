@@ -31,10 +31,14 @@
     'body': "test \"${1:the_truth}\" do\n  assert_equal ${2:true}, ${3:true}\nend"
   'Begin rescue end block':
     'prefix': 'begin'
-    'body': "begin\n  ${1:# code here...}\nrescue StandardError => e\n  ${2:# rescue here}\nend # begin"
+    'body': "begin\n\t${1:# code here...}\nrescue StandardError => e\n\t${2:# rescue here}\nend # begin"
   'Factory Class':
     'prefix': 'factory'
-    'body': "class ${1:ExampleFactory}\n  attr_reader :${2:attribute_1}, :${3:attribute_1}, :${4:etc}\n\n  def initialize(p = {})\n    @p = p\n  end\n\n  def build\n    private_build\n    return true\n  rescue StandardError => e\n    @error = e\n    return false\n  end\n\n  def build!\n    private_build\n    true\n  end\n\n  private\n    def private_build\n      ${5:# Build Code Here...}\n    end\nend"
+    'body': "class ${1:ExampleFactory}\n  class EmptyParameters < StandardError; end\n  class MissingParameter < StandardError; end\n\n  attr_reader :p, :errors, :${2:etc}\n\n  def initialize(p = {})\n    @p = p\n    @errors = []\n  end\n\n  def build\n    private_build\n    return true\n  rescue StandardError => e\n    @errors << e.message\n    return false\n  end\n\n  def build!\n    private_build\n    true\n  end\n\n  private\n    def private_build\n      raise EmptyParameters if @p.blank?\n      ${3:# Build Code Here...}\n    end\nend"
   'FactoryTest Class':
     'prefix': 'factory_test'
-    'body': "require 'test_helper'\n\nclass ${1:ExampleFactoryTest} < ActiveSupport::TestCase\n  def setup\n  end\n\n  test 'bad build' do\n    example = ExampleFactory.new\n    assert_equal false, example.build\n  end\n\n  test 'bad build!' do\n    example = ExampleFactory.new\n    assert_raises StandardError do\n      example.build!\n      end\n  end\nend"
+    'body': "require 'test_helper'\n\n#Replace ExampleFactory with your Factory class\nclass ${1:ExampleFactoryTest} < ActiveSupport::TestCase\n  def setup\n  end\n\n  test 'bad build' do\n    example = ExampleFactory.new\n    assert_equal false, example.build\n  end\n\n  test 'bad build!' do\n    example = ExampleFactory.new\n    assert_raises  ExampleFactory::EmptyParameters do\n      example.build!\n    end\n  end\nend"
+'.text':
+  'Horizontal Rule':
+    'prefix': '=80'
+    'body':'================================================================================'
