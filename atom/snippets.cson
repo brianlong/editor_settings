@@ -28,7 +28,7 @@
     'body': "# ${0:Describe This Module}\n#\n# * Examples:\n#     Example_Code"
   'Create a new test':
     'prefix': 'test'
-    'body': "test \"${1:the_truth}\" do\n  assert_equal ${2:true}, ${3:true}\nend"
+    'body': "test '${1:the_truth}' do\n  assert_equal ${2:true}, ${3:true}\nend"
   'Begin rescue end block':
     'prefix': 'begin'
     'body': "begin\n\t${1:# code here...}\nrescue StandardError => e\n\t${2:# rescue here}\nend # begin"
